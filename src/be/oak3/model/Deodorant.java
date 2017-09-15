@@ -12,4 +12,8 @@ public class Deodorant extends Product {
     public String toString() {
         return super.toString() + " " + soort;
     }
+
+    public enum DeoType {
+        VAPO, STICK
+    }
 }

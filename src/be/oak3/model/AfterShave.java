@@ -10,6 +10,10 @@ public class AfterShave extends Product {
 
     @Override
     public String toString() {
-        return super.toString() + " " + soort;
+        return super.toString() + "\t" + soort;
+    }
+
+    public enum Soort {
+        VAPO, GEL
     }
 }

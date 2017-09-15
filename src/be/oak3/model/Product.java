@@ -2,7 +2,7 @@ package be.oak3.model;
 
 import java.util.Comparator;
 
-public class Product implements Comparable<Product> {
+public abstract class Product implements Comparable<Product> {
     private int productNummer;
     private String merk;
     private String naam;
@@ -10,11 +10,11 @@ public class Product implements Comparable<Product> {
     private double prijs;
 
     public Product(int productNummer, String merk, String naam, int volume, double prijs) {
-        this.productNummer = productNummer;
-        this.merk = merk;
-        this.naam = naam;
-        this.volume = volume;
-        this.prijs = prijs;
+        this.setProductNummer(productNummer);
+        this.setMerk(merk);
+        this.setNaam(naam);
+        this.setVolume(volume);
+        this.setPrijs(prijs);
     }
 
     public int getProductNummer() {
@@ -60,13 +60,23 @@ public class Product implements Comparable<Product> {
     public String getProductCode() {
         String productCode;
         StringBuilder builder = new StringBuilder();
-        productCode = builder.append(getMerk().substring(0,3)).append(getNaam().substring(0,3)).append(String.valueOf(getVolume())).toString();
+        productCode = builder.append(getMerk().substring(0, 3)).append(getNaam().substring(0, 3)).append(String.valueOf(getVolume())).toString();
         return productCode.replace(' ', '_').toUpperCase();
     }
 
     public static Comparator<Product> sorteerOpMerkNaam() {
-        return (p1,p2) -> p1.getMerk().compareTo(p2.getMerk());
+        return (p1, p2) -> p1.getMerk().compareTo(p2.getMerk());
     }
+
+    //voor java8
+//    Comparator<Product> comparator = new Comparator<Product>() {
+//        @Override
+//        public int compare(Product o1, Product o2) {
+//            return p1.getMerk().compareTo(p2.getMerk());
+//        }
+//    };
+//    return comparator;
+//    }
 
     @Override
     public boolean equals(Object o) {
