@@ -1,8 +1,14 @@
 package be.oak3.persistence;
 
+import be.oak3.model.AfterShave;
+import be.oak3.model.Deodorant;
+import be.oak3.model.Parfum;
+import be.oak3.model.Product;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import be.oak3.model.*;
 
 public class Data {
 	private static Product[] artikels = {

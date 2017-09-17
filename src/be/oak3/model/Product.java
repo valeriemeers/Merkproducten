@@ -101,6 +101,6 @@ public abstract class Product implements Comparable<Product> {
     @Override
     public String toString(){
         StringBuilder SB = new StringBuilder();
-        return SB.append(getProductNummer()).append(" Merk: ").append(String.format("%-20s",getMerk())).append("Naam: ").append(String.format("%-30s",getNaam())).append("Volume: ").append(String.format("%5s",getVolume()+"ml")).append(String.format("%10s","Prijs: ")).append(getPrijs()).append(" Code: " + getProductCode()).toString();
+        return SB.append(getProductNummer()).append(" Merk: ").append(String.format("%-20s",getMerk())).append("Naam: ").append(String.format("%-30s",getNaam())).append("Volume: ").append(String.format("%5s",getVolume()+"ml")).append(String.format("%10s","Prijs: ")).append(String.format("%5.2f",getPrijs())).append(String.format(" Code: ","%9s")) + getProductCode();
     }
 }

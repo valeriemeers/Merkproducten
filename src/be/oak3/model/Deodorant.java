@@ -10,7 +10,7 @@ public class Deodorant extends Product {
 
     @Override
     public String toString() {
-        return super.toString() + " " + soort;
+        return super.toString() + "\t" + soort;
     }
 
     public enum DeoType {
